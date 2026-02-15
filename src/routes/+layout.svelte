@@ -1,14 +1,14 @@
 <script lang="ts">
-	import '../app.css';
-	import LightDarkToggle from '$lib/components/custom/LightDarkToggle.svelte';
+	import './layout.css';
+	import favicon from '$lib/assets/favicon.svg';
 	import { ModeWatcher } from 'mode-watcher';
 
 	let { children } = $props();
 </script>
 
-<ModeWatcher />
-<div class="flex h-screen w-screen flex-col items-center justify-center">
-	{@render children()}
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
 
-	<LightDarkToggle />
-</div>
+<ModeWatcher />
+{@render children()}
