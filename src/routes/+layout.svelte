@@ -1,5 +1,6 @@
 <script lang="ts">
 	import './layout.css';
+	import { ModeWatcher } from 'mode-watcher';
 	import { env as publicEnv } from '$env/dynamic/public';
 	import favicon from '$lib/assets/favicon.svg';
 
@@ -25,4 +26,6 @@
 		</script>
 	{/if}
 </svelte:head>
+
+<ModeWatcher />
 {@render children()}
