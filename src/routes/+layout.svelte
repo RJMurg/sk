@@ -1,5 +1,6 @@
 <script lang="ts">
 	import './layout.css';
+	import { env as publicEnv } from '$env/dynamic/public';
 	import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
@@ -13,5 +14,14 @@
 		rel="stylesheet"
 	/>
 	<link rel="icon" href={favicon} />
+
+	{#if publicEnv.PUBLIC_ENABLE_ANALYTICS}
+		<script
+			src={publicEnv.PUBLIC_ANALYTICS_LINK}
+			data-site-id={publicEnv.PUBLIC_ANALYTICS_ID}
+			defer
+		>
+		</script>
+	{/if}
 </svelte:head>
 {@render children()}
