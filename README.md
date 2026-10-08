@@ -1,4 +1,5 @@
 ![](https://api.murga.cloud/raster/header?title=SK&subtitle=My%20SvelteKit%20Template)
+
 # SK
 
 SK is my personal template for building SvelteKit applications.
