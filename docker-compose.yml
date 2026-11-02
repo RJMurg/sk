@@ -2,14 +2,14 @@ services:
   web:
     labels:
       - 'traefik.enable=true'
-      - 'traefik.http.routers.CHANGEME.rule=Host(`sub.example.com`)'
-      - 'traefik.http.services.CHANGEME.loadbalancer.server.port=3000'
-      - 'traefik.http.routers.CHANGEME.entrypoints=websecure'
-      - 'traefik.http.routers.CHANGEME.tls.certresolver=external-resolver'
+      - 'traefik.http.routers.brand.rule=Host(`brand.rjm.ie`)'
+      - 'traefik.http.services.brand.loadbalancer.server.port=3000'
+      - 'traefik.http.routers.brand.entrypoints=websecure'
+      - 'traefik.http.routers.brand.tls.certresolver=external-resolver'
       - 'external-service=true'
       - 'traefik.docker.network=traefik-external'
     build: .
-    container_name: bla
+    container_name: brand
     environment:
       # Analytics
       PUBLIC_ENABLE_ANALYTICS: false

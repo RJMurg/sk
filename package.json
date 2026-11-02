@@ -1,7 +1,7 @@
 {
-	"name": "sk",
+	"name": "brand",
 	"private": true,
-	"version": "3.1.0",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -55,5 +55,11 @@
 	"imports": {
 		"#lib": "./src/lib/index.js",
 		"#lib/*": "./src/lib/*"
+	},
+	"overrides": {
+		"@tailwindcss/typography": {
+			"postcss-selector-parser": "^6.1.5"
+		},
+		"minimatch": "^11.0.1"
 	}
 }

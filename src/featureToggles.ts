@@ -1,10 +1,8 @@
 import type { Handle } from '@sveltejs/kit/hooks';
-import { env } from '$env/dynamic/private';
-import { env as publicEnv } from '$env/dynamic/public';
 
+// Declare flag variables in src/env.ts, then read them from $app/env/private here.
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type -- flags are added per project
 export interface FeatureFlags {}
-
-const isEnabled = (value: string | undefined): boolean => value?.toLowerCase() === 'true';
 
 export const featureTogglesHandler: Handle = async ({ event, resolve }) => {
 	event.locals.flags = {};

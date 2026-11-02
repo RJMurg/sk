@@ -4,6 +4,16 @@
 - **Package Manager**: npm
 - **Add-ons**: prettier, eslint, vitest, playwright, tailwindcss, mcp
 
+## Project Notes
+
+- PrimaryStyle brand styleguide (SvelteKit 3, Svelte 5, Tailwind 4, adapter-node), forked from the SK template.
+- Brand data lives in `src/lib/brand/`. `palette.ts` is generated from Tailwind 4's `theme.css`; don't hand-edit it.
+- The accent is Violet-500: `ACCENT` in `brand.ts` and `--color-brand` in `src/routes/layout.css` must match. Use `text-brand` / `bg-brand`, not raw `violet-500`.
+- Use `font-mono` for code, hex, OKLCH and other technical values.
+- The `RJM` pattern (`Pattern.svelte`) outlines text with an SVG filter, not `-webkit-text-stroke`: Montserrat's overlapping contours show through a stroke.
+- Env vars are runtime (`src/env.ts`, `$app/env/public`), so pages are not prerendered. `$env/dynamic/*` no longer exists in Kit 3.
+- Never include the signature files from the brand source folder.
+
 ---
 
 You are able to use the Svelte MCP server, where you have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:

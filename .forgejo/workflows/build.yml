@@ -45,7 +45,6 @@ jobs:
           digest=$(docker buildx imagetools inspect "$REGISTRY/$IMAGE_NAME:latest" --format '{{ .Manifest.Digest }}' 2>/dev/null) || exit 0
           echo "digest=$digest" >> "$GITHUB_OUTPUT"
 
-
       - name: Build and push
         id: push
         uses: docker/build-push-action@v6
@@ -112,7 +111,6 @@ jobs:
         run: |
           trivy image --quiet --scanners vuln --image-src remote --format json --output "$RUNNER_TEMP/trivy.json" "$REGISTRY/$IMAGE_NAME@$DIGEST"
           trivy convert --format table --output "$RUNNER_TEMP/trivy.txt" "$RUNNER_TEMP/trivy.json"
-
 
       - name: Write job summary
         if: always()
